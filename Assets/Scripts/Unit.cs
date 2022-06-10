@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
+    //ENCAPSULATION
     protected float Speed 
     {
         get => m_Speed;
@@ -39,7 +40,6 @@ public abstract class Unit : MonoBehaviour
         }
     }
 
-
     protected Rigidbody m_rigidBody;
     protected bool m_IsOnGround;
 
@@ -51,8 +51,6 @@ public abstract class Unit : MonoBehaviour
     {
         m_rigidBody = gameObject.GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -87,6 +85,7 @@ public abstract class Unit : MonoBehaviour
         Speed = Random.Range(SpeedMinimum, SpeedMaximum);
     }
 
+    //ABSTRACTION
     protected virtual void Move()
     {
         transform.Translate(Vector3.forward * Speed * Time.deltaTime);

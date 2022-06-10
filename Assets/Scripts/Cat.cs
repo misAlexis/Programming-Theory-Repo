@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cat : Unit
 {
+    //INHERITANCE
     protected override void Start()
     {
         SpeedMaximum = Random.Range(3.0f, 6.0f);
@@ -13,11 +14,13 @@ public class Cat : Unit
         base.Start();
     }
 
+
     protected override void Speak()
     {
         Debug.Log("Meow");
     }
 
+    //POLYMORPHISM
     protected override void Move()
     {
         base.Move();
